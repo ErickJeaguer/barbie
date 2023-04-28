@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Barbie Escuela de Princesas</title>
+    <style>
+        body {
+            background-color: #333;
+            color: #fff;
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 3rem;
+            margin: 2rem 0;
+        }
+
+        img {
+            margin: 2rem 0;
+            max-width: 100%;
+        }
+
+        label {
+            display: block;
+            font-size: 2rem;
+            margin: 2rem 0;
+        }
+
+        input[type=radio] {
+            margin: 0 1rem;
+        }
+
+        input[type=submit] {
+            background-color: #ff69b4;
+            border: none;
+            color: #fff;
+            cursor: pointer;
+            font-size: 2rem;
+            padding: 1rem 2rem;
+            transition: background-color 0.3s ease-in-out;
+        }
+
+        input[type=submit]:hover {
+            background-color: #ff1493;
+        }
+    </style>
+</head>
+<body>
+    <h1>¿Quieres ver Barbie Escuela de Princesas conmigo?</h1>
+    <img src="https://es.web.img3.acsta.net/r_1280_720/pictures/18/02/21/09/04/5387941.jpg" alt="Barbie Escuela de Princesas">
+    <form id="form" action="mailto:elrick0100@gmail.com" method="post" enctype="text/plain">
+        <label><input type="radio" name="respuesta" value="si">Sí</label>
+        <label><input type="radio" name="respuesta" value="no">No</label>
+        <input type="submit" value="Enviar respuesta">
+    </form>
+    <script>
+        const form = document.getElementById('form');
+        const radioSi = form.querySelector('input[value="si"]');
+
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+            if (radioSi.checked) {
+                window.location.href = 'https://api.whatsapp.com/send?phone=593962761298&text=vamos%20a%20ver%20barbie%20uwu';
+            } else {
+                alert('¡Qué lástima! Tal vez la próxima vez.');
+            }
+        });
+    </script>
+</body>
+</html>
